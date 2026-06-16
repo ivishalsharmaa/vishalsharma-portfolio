@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { Award, Trophy, Timer, Users, Lightbulb, ShieldCheck, BarChart } from "lucide-react";
+import { Trophy, Timer, Users, Lightbulb, ShieldCheck, BarChart } from "lucide-react";
 
 export default function ExperienceAndMore() {
   const achievements = [
