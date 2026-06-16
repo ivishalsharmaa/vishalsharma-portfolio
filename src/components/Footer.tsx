@@ -1,11 +1,6 @@
 "use client";
 
-import { ArrowUp } from "lucide-react";
-
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <footer className="relative mt-12 border-t border-white/10 pt-8 pb-8">
