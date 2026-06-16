@@ -25,13 +25,7 @@ export default function Footer() {
           <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
         </div>
 
-        <button 
-          onClick={scrollToTop}
-          className="w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-white/10 hover:text-cyan-400 transition-all border border-white/10 hover:border-cyan-500/50"
-          aria-label="Back to top"
-        >
-          <ArrowUp size={20} />
-        </button>
+
       </div>
       
       <div className="text-center text-xs text-gray-500 mt-12 relative z-10">
