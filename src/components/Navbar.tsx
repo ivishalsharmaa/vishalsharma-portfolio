@@ -38,18 +38,16 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
-        <div
-          className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
-            scrolled ? "glass shadow-lg" : "bg-transparent"
-          }`}
-        >
+        <div className="flex items-center justify-between py-3">
           <Link href="/" className="text-2xl font-heading font-bold text-gradient">
             VS.
           </Link>
 
           {/* Hamburger Menu Button */}
           <button
-            className="text-gray-300 hover:text-white transition-colors"
+            className={`p-3 rounded-full text-gray-300 hover:text-white transition-all duration-300 ${
+              scrolled ? "glass shadow-lg" : "hover:bg-white/5"
+            }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
