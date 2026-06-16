@@ -8,7 +8,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative mt-24 border-t border-white/10 pt-12 pb-8">
+    <footer className="relative mt-12 border-t border-white/10 pt-8 pb-8">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0f172a] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">

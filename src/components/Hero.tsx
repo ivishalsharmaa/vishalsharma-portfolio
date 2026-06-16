@@ -38,14 +38,14 @@ export default function Hero() {
             Welcome to my portfolio
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-heading font-bold text-white leading-tight">
             Hi, I&apos;m <br />
             <span className="text-gradient">Vishal Sharma</span>
           </h1>
           
-          <div className="h-16 md:h-12">
+          <div className="mb-4">
             <motion.p 
-              className="text-xl md:text-2xl text-gray-300 font-light"
+              className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light"
               initial={{ opacity: 1 }}
             >
               {text.split("").map((char, index) => (
@@ -107,7 +107,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="relative flex justify-center lg:justify-end"
         >
-          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full p-2 glass-card animate-float before:absolute before:inset-0 before:rounded-full before:animate-glow">
+          <div className="relative w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full p-2 glass-card animate-float before:absolute before:inset-0 before:rounded-full before:animate-glow">
             <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white/10 bg-gradient-to-tr from-purple-500/20 to-cyan-500/20 m-2">
               <Image 
                 src="/profile.jpg" 

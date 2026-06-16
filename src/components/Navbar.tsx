@@ -37,7 +37,7 @@ export default function Navbar() {
         scrolled ? "py-4" : "py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
         <div
           className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
             scrolled ? "glass shadow-lg" : "bg-transparent"
@@ -47,38 +47,9 @@ export default function Navbar() {
             VS.
           </Link>
 
-          {/* Desktop Nav */}
-          <ul className="hidden lg:flex items-center gap-2">
-            {links.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                      isActive 
-                        ? "text-cyan-400" 
-                        : "text-gray-300 hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavPill"
-                        className="absolute inset-0 bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.2)] rounded-full"
-                        initial={false}
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                    <span className="relative z-10">{link.name}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Mobile Menu Button */}
+          {/* Hamburger Menu Button */}
           <button
-            className="lg:hidden text-gray-300 hover:text-white transition-colors"
+            className="text-gray-300 hover:text-white transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,14 +57,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Full Screen Nav Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-full left-0 right-0 px-6 pt-4 pb-8 glass rounded-b-3xl border-t-0 shadow-2xl flex flex-col items-center gap-6"
+            className="fixed inset-0 h-screen w-screen bg-[#0f172a]/98 backdrop-blur-xl z-10 flex flex-col items-center justify-center gap-6"
           >
             {links.map((link) => {
               const isActive = pathname === link.href;
@@ -102,7 +73,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`relative px-6 py-2 rounded-full text-lg font-medium transition-colors ${
+                  className={`relative px-8 py-3 rounded-full text-2xl font-medium transition-colors ${
                     isActive 
                       ? "text-cyan-400" 
                       : "text-gray-200 hover:text-cyan-400 hover:bg-white/5"
@@ -111,7 +82,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeMobileNavPill"
-                      className="absolute inset-0 bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.2)] rounded-full"
+                      className="absolute inset-0 bg-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.2)] rounded-full"
                       initial={false}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
